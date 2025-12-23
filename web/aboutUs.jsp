@@ -20,7 +20,7 @@
 
                    <a class="navbar-brand" href="index.jsp">
                         <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <img src="images/trendhireLogo.jpg" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -96,7 +96,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.png" alt="Banner" />
+                                <img class="w-100" src="images/trendhireLogo.jpg" alt="Banner" />
                             </div>
                         </div>
                     </div>
@@ -117,9 +117,9 @@
                     </div>
                     <div class="col-sm-6 pt-md-5 mx-auto pt-sm-0">
                         <h1>Company <span class="text-red">Overview</span></h1>
-                        <p class="pt-3">Tredhire is a cutting-edge and user-friendly job application portal that aims to revolutionize the way job seekers and employers connect. Built with the latest technologies and a focus on enhancing the job application process, Tredhire provides an intuitive and efficient platform for job seekers to find their dream positions and for employers to discover top talent.</p>
+                        <p class="pt-3">GrumJobs is a cutting-edge and user-friendly job application portal that aims to revolutionize the way job seekers and employers connect. Built with the latest technologies and a focus on enhancing the job application process, Tredhire provides an intuitive and efficient platform for job seekers to find their dream positions and for employers to discover top talent.</p>
                         <div class="p">
-                            Tredhire is a modern and dynamic job application portal that brings job seekers and employers together through a user-friendly and efficient platform. With its innovative features and commitment to user satisfaction, Tredhire sets a new standard for the online job search and recruitment industry, creating a seamless experience for all users involved in the job application process.
+                            GrumJobs is a modern and dynamic job application portal that brings job seekers and employers together through a user-friendly and efficient platform. With its innovative features and commitment to user satisfaction, Tredhire sets a new standard for the online job search and recruitment industry, creating a seamless experience for all users involved in the job application process.
                         </div>
                     </div>
                 </div>

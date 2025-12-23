@@ -77,7 +77,7 @@
         <nav class="navbar navbar-expand-lg navbar-light"></nav>
             <div class="container-fluid"></div>
                 <a class="navbar-brand" href="index.jsp">
-                    <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                    <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
                 </a>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav navbar-center m-auto">
