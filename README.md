@@ -31,11 +31,29 @@ A comprehensive web-based recruitment management system built with JSP, Servlets
   - Rejection reasons management
 
 ### For Job Seekers
-- User registration and profile management
-- Browse and search job vacancies
-- Apply for jobs with CV upload
-- Track application status
-- View interview schedules
+- **User Registration & Profile Management**
+  - Create detailed seeker profiles
+  - Upload CV and profile pictures
+  - Manage personal information
+
+- **Job Search & Application**
+  - Browse and search job vacancies
+  - Apply for jobs with CV upload
+  - View detailed job descriptions and requirements
+
+- **Comprehensive Application Tracking**
+  - Real-time application status monitoring
+  - Application statistics dashboard
+  - Filter applications by status (Applied, Under Review, Shortlisted, Interview Scheduled, Selected, Rejected)
+  - Detailed application history with timeline view
+  - Interview scheduling information with meeting links
+  - Recruiter notes and feedback visibility
+  - Application withdrawal functionality
+
+- **Interview Management**
+  - View scheduled interview details
+  - Access meeting links for online interviews
+  - Track interview completion and feedback
 
 ### For Administrators
 - System administration dashboard
@@ -141,7 +159,7 @@ TrendHire/
 - Set salary ranges and application deadlines
 - Publish immediately or save as draft
 
-### 2. Application Management
+### 2. Application Management (Company Side)
 - Access via Company Profile → Manage Applications
 - Filter applications by status tabs
 - Review candidate information and CVs
@@ -153,6 +171,15 @@ TrendHire/
 - Choose interview mode (Online/Onsite/Phone)
 - Set date, time, and meeting details
 - Automatic email notifications (if configured)
+
+### 4. Application Tracking (Job Seeker Side)
+- Access via User Profile → My Applications
+- View comprehensive application statistics
+- Filter applications by current status
+- Track complete application history with timeline
+- View interview details and meeting links
+- Withdraw applications when allowed
+- Access recruiter notes and feedback
 
 ## 🔧 Configuration
 
