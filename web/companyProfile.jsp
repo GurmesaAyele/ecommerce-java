@@ -97,11 +97,6 @@
 
                         <div class="proLinks">
                             <div class="d-grid mb-4">
-                                <a href="recruiter_dashboard.jsp" class="btn btn-primary">
-                                    <i class="fa fa-tachometer-alt" aria-hidden="true"></i> Recruiter Dashboard
-                                </a> 
-                            </div>
-                            <div class="d-grid mb-4">
                                 <a href="postvacancy.jsp" class="btn btn-success mb-2">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Post New Job
                                 </a>
@@ -165,8 +160,8 @@
                                         </a>
                                     </span>
                                     <span class="float-end fx-top" style="margin-left: 10px;">
-                                        <a href="recruiter_dashboard.jsp" class="btn btn-primary">
-                                            <i class="fa fa-tachometer-alt me-2" aria-hidden="true"></i> Dashboard
+                                        <a href="manageApplications.jsp" class="btn btn-primary">
+                                            <i class="fa fa-users me-2" aria-hidden="true"></i> Applications
                                         </a>
                                     </span>
                                     <span class="float-end fx-top" style="margin-left: 10px;">
@@ -237,7 +232,7 @@
                 <div class="row" >
                     <div class="col-sm-3" style="margin-top: 20px;">
                         <a href="index.jsp">
-                            <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
+                            <img src="images/trendhireLogo.jpg" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
                             <p class="w-90">"Welcome to GrumJobs, your gateway to career opportunities. Explore, apply, and 
