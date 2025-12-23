@@ -22,7 +22,7 @@
 
                     <a class="navbar-brand" href="index.jsp">
                       
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <img src="images/trenHire.jpg" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -102,7 +102,7 @@
         <div class="container-fluid" style="margin-top: 30px">
             <div class="row">
                 <div class="col d-flex flex-column align-items-center justify-content-center">
-                    <h1><i>"Elevate Your Career with TrendHire!</i> </h1>
+                    <h1><i>"Elevate Your Career with GrumJobs!</i> </h1>
                     <h2 class="text-red"><i>Where Trends Lead to Success"</i> </h2>
                     <a href="userRegisterForm.jsp" style="margin-top: 15px"> <button type="button" class="btn btn-danger">Sign Up Now</button> </a>
                 </div>
@@ -119,7 +119,7 @@
                         <div class="ourjobInner mb-4">
                             <i class="fa fa-users" aria-hidden="true"></i>
                             <h3 class="text-red">Post Job Vacancies</h3>
-                            <p>Empower your hiring process.<br> Companies, showcase job opportunities on TrendHire and <br>connect with exceptional talent effortlessly.<br> Elevate your team today!</p>
+                            <p>Empower your hiring process.<br> Companies, showcase job opportunities on GrumJobs and <br>connect with exceptional talent effortlessly.<br> Elevate your team today!</p>
                             <a href="postvacancy.jsp" class="btn btn-danger read rounded-pill"> Visit <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                         <div class="ourjobInner mb-4">
                             <i class="fa fa-search" aria-hidden="true"></i>
                             <h3 class="text-red">   Look for jobs</h3>
-                            <p>Explore diverse opportunities. <br>Jobseekers, search and discover tailored roles on TrendHire <br>to embark on your desired career journey</p>
+                            <p>Explore diverse opportunities. <br>Jobseekers, search and discover tailored roles on GrumJobs <br>to embark on your desired career journey</p>
                             <a href="vacancies.jsp" class="btn btn-danger read rounded-pill"> Visit <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -149,10 +149,10 @@
                 <div class="row" >
                     <div class="col-sm-3" style="margin-top: 20px;">
                         <a href="index.jsp">
-                            <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
+                            <img src="images/trendhireLogo.jpg" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
-                            <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
+                            <p class="w-90">"Welcome to GrumJobs, your gateway to career opportunities. Explore, apply, and 
                                 connect with your dream jobs effortlessly. Join us today and shape your future!" 
                             </p>
                         </div>
@@ -178,11 +178,11 @@
                             </div>
                             <div class="d-flex media">
                                 <i class="fa-regular fa-envelope"></i>
-                                <div class="media-body"><p>info@trendhire.com</p></div>
+                                <div class="media-body"><p>gurmesaayele49@gmail.com</p></div>
                             </div>
                             <div class="d-flex media">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <div class="media-body"><p class="f_rubik">+9455-1234567</p></div>
+                                <div class="media-body"><p class="f_rubik">+251916970942</p></div>
                             </div>
                         </div>
                     </div>

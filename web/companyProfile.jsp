@@ -28,7 +28,7 @@
 
                    <a class="navbar-brand" href="index.jsp">
                         <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <img src="images/trenHire.jpg" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -97,19 +97,28 @@
 
                         <div class="proLinks">
                             <div class="d-grid mb-4">
+                                <a href="recruiter_dashboard.jsp" class="btn btn-primary">
+                                    <i class="fa fa-tachometer-alt" aria-hidden="true"></i> Recruiter Dashboard
+                                </a> 
+                            </div>
+                            <div class="d-grid mb-4">
+                                <a href="postvacancy.jsp" class="btn btn-success mb-2">
+                                    <i class="fa fa-plus" aria-hidden="true"></i> Post New Job
+                                </a>
+                                <a href="manageApplications.jsp" class="btn btn-primary">
+                                    <i class="fa fa-users" aria-hidden="true"></i> Manage Applications
+                                </a> 
+                            </div>
+                            <div class="d-grid mb-4">
                                 <a href="companyVacancies.jsp" class="btn btn-outline-danger">
                                     <i class="fa-solid fa-address-card" aria-hidden="true"></i> My Vacancies
-
                                 </a> 
                             </div>
                             <div class="d-grid mb-4">
                                 <a href="companyApplication.jsp" class="btn btn-outline-danger">
                                     <i class="fa-solid fa-address-card" aria-hidden="true"></i> Received Application
-
                                 </a> 
                             </div>
-
-
                             <div class="d-grid mb-4">
                                 <a href="./backend/logout.jsp" class="btn btn-outline-danger">
                                     <i class="fa fa-sign-out me-2" aria-hidden="true"></i> Logout
@@ -147,15 +156,26 @@
                             
                             <div class="pb-5">
                                 <h3>Company Information
-                                    <span class="float-end fx-top">
-
+                                    <span class="float-end fx-top" style="margin-left: 10px;">
+                                        <a href="postvacancy.jsp" class="btn btn-success me-2">
+                                            <i class="fa fa-plus me-2" aria-hidden="true"></i> Post New Job
+                                        </a>
+                                        <a href="manageApplications.jsp" class="btn btn-primary">
+                                            <i class="fa fa-users me-2" aria-hidden="true"></i> Applications
+                                        </a>
+                                    </span>
+                                    <span class="float-end fx-top" style="margin-left: 10px;">
+                                        <a href="recruiter_dashboard.jsp" class="btn btn-primary">
+                                            <i class="fa fa-tachometer-alt me-2" aria-hidden="true"></i> Dashboard
+                                        </a>
+                                    </span>
+                                    <span class="float-end fx-top" style="margin-left: 10px;">
                                         <a href="postvacancy.jsp" class="btn btn-danger">
                                             <i class="fa fa-edit me-2" aria-hidden="true"></i> Create New Vacancy
                                         </a>
                                     </span>
                                     <span class="float-end fx-top">
-
-                                        <a href="editCompany.jsp" class="btn btn-danger">
+                                        <a href="editCompany.jsp" class="btn btn-warning">
                                             <i class="fa fa-edit me-2" aria-hidden="true"></i> Edit Information
                                         </a>
                                     </span>
@@ -220,7 +240,7 @@
                             <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
-                            <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
+                            <p class="w-90">"Welcome to GrumJobs, your gateway to career opportunities. Explore, apply, and 
                                 connect with your dream jobs effortlessly. Join us today and shape your future!" 
                             </p>
                         </div>

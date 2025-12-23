@@ -6,10 +6,10 @@ import java.util.logging.Logger;
 
 public class DBConnector {
 
-    final static String URL = "jdbc:mysql://localhost:3306/trendhire"; 
+    final static String URL = "jdbc:mysql://localhost:3306/trendhire?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC"; 
     final static String DB_USER = "root";
-    final static String DB_PASSWORD = "";
-    final static String DRIVER = "com.mysql.jdbc.Driver";
+    final static String DB_PASSWORD = "14162121";
+    final static String DRIVER = "com.mysql.cj.jdbc.Driver";
     static Connection con;
 
     public static Connection getCon() {
