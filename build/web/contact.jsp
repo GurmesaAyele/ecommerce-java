@@ -21,8 +21,8 @@
                 <div class="container-fluid">
 
                    <a class="navbar-brand" href="index.jsp">
-                        <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <!-- <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="w-100 main-logo" alt="Logo" title="Logo">-->
+                        <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -98,7 +98,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.png" alt="Banner" />
+                                <img class="w-100" src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner" />
                             </div>
                         </div>
                     </div>
@@ -145,7 +145,7 @@
                             <div class="col-sm-12">
                                 <div class="jobImage rounded-lg">
                                     <div class="image-card">
-                                        <img class="w-100" src="images/trenHire.png" alt="Job" height="385px">
+                                        <img class="w-100" src="images/trenHire.jpg?v=<%= System.currentTimeMillis() %>" alt="Job" height="385px">
                                     </div>
 
                                 </div>
@@ -162,10 +162,10 @@
                 <div class="row" >
                     <div class="col-sm-3" style="margin-top: 20px;">
                         <a href="index.jsp">
-                            <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
+                            <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
-                            <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
+                            <p class="w-90">"Welcome to GrumJobs, your gateway to career opportunities. Explore, apply, and 
                                 connect with your dream jobs effortlessly. Join us today and shape your future!" 
                             </p>
                         </div>
@@ -205,3 +205,4 @@
         </footer>
     </body>
 </html>
+

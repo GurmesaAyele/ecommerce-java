@@ -24,8 +24,8 @@
                 <div class="container-fluid">
 
                     <a class="navbar-brand" href="index.jsp">
-                        <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <!-- <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="w-100 main-logo" alt="Logo" title="Logo">-->
+                        <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -103,7 +103,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.png" alt="Banner">
+                                <img class="w-100" src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner">
                             </div>
                         </div>
                     </div>
@@ -146,11 +146,17 @@
                                     int currentPage = (request.getParameter("page") != null) ? Integer.parseInt(request.getParameter("page")) : 1;
                                     int recordsPerPage = 8; // Number of records to display per page
 
-                                    Connection connection = DBConnector.getCon();
+                                    Connection connection = null;
                                     PreparedStatement statement = null;
                                     ResultSet resultSet = null;
 
                                     try {
+                                        connection = DBConnector.getCon();
+                                        if (connection == null) {
+                                            out.println("<div class='alert alert-danger'>Database connection failed. Please check if MySQL is running.</div>");
+                                            return;
+                                        }
+                                        
                                         int totalRecords = 0;
                                         int totalPages = 0;
 
@@ -297,6 +303,10 @@
                             <%
 
                                 } catch (SQLException ex) {
+                                    out.println("<div class='alert alert-danger'>Database error: " + ex.getMessage() + "</div>");
+                                    ex.printStackTrace();
+                                } catch (Exception ex) {
+                                    out.println("<div class='alert alert-danger'>System error: " + ex.getMessage() + "</div>");
                                     ex.printStackTrace();
                                 } finally {
                                     if (resultSet != null) {
@@ -330,7 +340,7 @@
                 <div class="row" >
                     <div class="col-sm-3" style="margin-top: 20px;">
                         <a href="index.jsp">
-                            <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
+                            <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
                             <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 

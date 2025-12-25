@@ -8,10 +8,6 @@
         <servlet-name>companyPictureUpdate</servlet-name>
         <servlet-class>servlet.companyPictureUpdate</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>uploadcv</servlet-name>
-        <servlet-class>servlet.uploadcv</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>updatePicture</servlet-name>
         <url-pattern>/updatePicture</url-pattern>
@@ -19,10 +15,6 @@
     <servlet-mapping>
         <servlet-name>companyPictureUpdate</servlet-name>
         <url-pattern>/companyPictureUpdate</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>uploadcv</servlet-name>
-        <url-pattern>/uploadcv</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

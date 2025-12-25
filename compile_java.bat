@@ -4,8 +4,8 @@ echo Compiling TrendHire Java Classes
 echo ========================================
 echo.
 
-set MYSQL_JAR=D:\software\mysql-connector-j-8.1.0\mysql-connector-j-8.1.0.jar
-set SERVLET_JAR=C:\Program Files\Apache Software Foundation\Tomcat 9.0\lib\servlet-api.jar
+set MYSQL_JAR=lib\mysql-connector-j-8.1.0.jar
+set SERVLET_JAR=lib\servlet-api.jar
 
 echo Checking MySQL Connector...
 if exist "%MYSQL_JAR%" (

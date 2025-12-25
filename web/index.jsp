@@ -8,8 +8,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">	
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css?v=<%= System.currentTimeMillis() %>">
+        <link href="css/bootstrap.min.css?v=<%= System.currentTimeMillis() %>" rel="stylesheet">	
         <script src="https://kit.fontawesome.com/0008de2df6.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -192,3 +192,4 @@
         </footer>
     </body>
 </html>
+

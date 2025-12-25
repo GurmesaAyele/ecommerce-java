@@ -191,23 +191,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <%= filterStatus.equals("Applied") ? "active" : "" %>" href="?status=Applied">
+                            <a class="nav-link <%= filterStatus.equals("Waiting") ? "active" : "" %>" href="?status=Waiting">
                                 <i class="fas fa-clock"></i> Applied
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link <%= filterStatus.equals("Under Review") ? "active" : "" %>" href="?status=Under Review">
-                                <i class="fas fa-search"></i> Under Review
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <%= filterStatus.equals("Interview Scheduled") ? "active" : "" %>" href="?status=Interview Scheduled">
-                                <i class="fas fa-calendar"></i> Interviews
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link <%= filterStatus.equals("Selected") ? "active" : "" %>" href="?status=Selected">
-                                <i class="fas fa-check-circle"></i> Selected
+                            <a class="nav-link <%= filterStatus.equals("Accepted") ? "active" : "" %>" href="?status=Accepted">
+                                <i class="fas fa-check-circle"></i> Accepted
                             </a>
                         </li>
                         <li class="nav-item">
@@ -233,10 +223,12 @@
                                          "WHERE a.seekerID = ?";
                             
                             if (!filterStatus.equals("all")) {
-                                if (filterStatus.equals("Applied")) {
-                                    query += " AND (a.application_status IS NULL OR a.application_status = 'Applied')";
-                                } else {
-                                    query += " AND a.application_status = ?";
+                                if (filterStatus.equals("Applied") || filterStatus.equals("Waiting")) {
+                                    query += " AND a.status = 'Waiting'";
+                                } else if (filterStatus.equals("Accepted") || filterStatus.equals("Selected")) {
+                                    query += " AND a.status = 'Accepted'";
+                                } else if (filterStatus.equals("Rejected")) {
+                                    query += " AND a.status = 'Rejected'";
                                 }
                             }
                             
@@ -245,17 +237,17 @@
                             PreparedStatement stmt = connection.prepareStatement(query);
                             stmt.setString(1, seeker.useSeekerID());
                             
-                            if (!filterStatus.equals("all") && !filterStatus.equals("Applied")) {
-                                stmt.setString(2, filterStatus);
-                            }
-                            
                             ResultSet rs = stmt.executeQuery();
                             
                             boolean hasApplications = false;
                             while (rs.next()) {
                                 hasApplications = true;
-                                String status = rs.getString("application_status");
-                                if (status == null || status.trim().isEmpty()) status = "Applied";
+                                String status = rs.getString("status");
+                                if (status == null || status.trim().isEmpty()) status = "Waiting";
+                                // Convert database status to display status
+                                String displayStatus = status;
+                                if (status.equals("Waiting")) displayStatus = "Applied";
+                                if (status.equals("Accepted")) displayStatus = "Selected";
                                 int applicationId = rs.getInt("applicationID");
                     %>
                     
@@ -286,8 +278,8 @@
                                 </div>
                                 
                                 <div class="col-md-4 text-end">
-                                    <span class="badge status-badge status-<%= status.toLowerCase().replace(" ", "-") %> mb-3">
-                                        <%= status %>
+                                    <span class="badge status-badge status-<%= displayStatus.toLowerCase().replace(" ", "-") %> mb-3">
+                                        <%= displayStatus %>
                                     </span>
                                     
                                     <div class="d-grid gap-2">

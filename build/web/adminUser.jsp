@@ -32,7 +32,7 @@
 
                    <a class="navbar-brand" href="index.jsp">
                       
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -73,7 +73,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.png" alt="Banner" />
+                                <img class="w-100" src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner" />
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                         <div class="card mb-2 border-0">
                             <div class="jobImage">
                                 <div class="image-card">
-                                    <img class="card-img-top" src="images/uploads/adminPictures/default.png" alt="Profile">
+                                    <img class="card-img-top" src="images/uploads/adminPictures/default.jpg" alt="Profile">
                                 </div>
                             </div>
 

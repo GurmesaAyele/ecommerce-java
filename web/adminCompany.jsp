@@ -23,8 +23,8 @@
                 <div class="container-fluid">
 
                     <a class="navbar-brand" href="index.jsp">
-                        <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <!-- <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="w-100 main-logo" alt="Logo" title="Logo">-->
+                        <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -64,7 +64,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.png" alt="Banner" />
+                                <img class="w-100" src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner" />
                             </div>
                         </div>
                     </div>
@@ -323,3 +323,4 @@
                         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
                         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
                     </script>
+

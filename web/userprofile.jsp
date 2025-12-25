@@ -21,7 +21,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta http-equiv="cache-control" content="no-cache">
         <title>Profile</title>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css?v=<%= System.currentTimeMillis() %>">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
         <!--        <link href="css/bootstrap.min.css" rel="stylesheet">	-->
@@ -34,8 +34,8 @@
                 <div class="container-fluid">
 
                     <a class="navbar-brand" href="index.jsp">
-                        <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.png" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <!-- <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="w-100 main-logo" alt="Logo" title="Logo">-->
+                        <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -76,7 +76,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.png" alt="Banner" />
+                                <img class="w-100" src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner" />
                             </div>
                         </div>
                     </div>
@@ -126,20 +126,6 @@
                                 <h3>Personal Information </h3>
 
                                 <%
-
-                                    if (success != null && success.equals("1")) {  %>
-                                <div class='alert alert-success alert-dismissible fade show' role='alert'>
-                                    CV Upload Successfully!
-                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                </div>
-                                <%  }
-
-                                    if (success != null && success.equals("0")) {  %>
-                                <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                                    Please Upload PDF file!
-                                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-                                </div>
-                                <%  }
                                     if (success != null && success.equals("2")) {  %>
                                 <div class='alert alert-success alert-dismissible fade show' role='alert'>
                                     Profile Picture Updated Successfully!
@@ -155,104 +141,10 @@
                                         <i class="fa fa-edit me-2" aria-hidden="true"></i> Edit
                                     </a>
                                 </span>
-                                <span class="float-end fx-top">
-
-
-                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#applymodal">
-                                        <i class="fa fa-edit me-2" aria-hidden="true"></i> Upload CV
-                                    </button>
-                                </span>
 
                             </div>
 
 
-
-
-                            <form action="uploadcv" method="post" enctype="multipart/form-data">
-
-                                <div class="modal fade shadow my-5" id="applymodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
-                                     data-bs-backdrop="true">
-                                    <div class="modal-dialog modal-dialog-centered">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">apply to this Job
-                                                </h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-
-                                                <input class="form-control" type="hidden" name="userID"
-                                                       value="<% out.print(seeker.useSeekerID()); %>">
-
-                                                <div class="mb-1">
-                                                    <label for="formFile" class="form-label fs-5 my-2">Upload your CV
-                                                        here
-                                                    </label>
-                                                    <input class="form-control" type="file" id="cv" name="cv">
-                                                </div>
-
-                                                <div id="pdfPreviewContainer" class="scrollable-pdf-preview"></div>
-
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="submit" class="btn btn-danger w-100" value="Upload"
-                                                        name="submit">Upload</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <script>
-                                    // Function to preview the selected PDF and pdf file validation
-                                    function previewPDF()
-                                    {
-                                        const fileInput = document.getElementById('cv');
-                                        const pdfPreviewContainer = document.getElementById('pdfPreviewContainer');
-                                        const allowedTypes = ['application/pdf'];
-
-                                        if (fileInput.files.length > 0)
-                                        {
-                                            const file = fileInput.files[ 0 ];
-
-                                            // Check if the selected file type is allowed (PDF)
-                                            if (allowedTypes.includes(file.type))
-                                            {
-                                                const reader = new FileReader();
-
-                                                // Load the selected file into the FileReader
-                                                reader.readAsDataURL(file);
-
-                                                // When the file is loaded, display the PDF in the container
-                                                reader.onload = function (event)
-                                                {
-                                                    const pdfData = event.target.result;
-                                                    const pdfObject = '<object data="' + pdfData + '" type="application/pdf" width="100%" height="600px"></object>';
-                                                    pdfPreviewContainer.innerHTML = pdfObject;
-                                                };
-                                            } else
-                                            {
-                                                // Display an alert for invalid file type
-                                                window.location = `userprofile.jsp?success=0`;
-
-                                                // Clear the file input
-                                                fileInput.value = '';
-                                                // Clear the preview container
-                                                pdfPreviewContainer.innerHTML = '';
-                                            }
-                                        } else
-                                        {
-                                            // Clear the preview container if no file is selected
-                                            pdfPreviewContainer.innerHTML = '';
-                                        }
-                                    }
-
-                                    // Attach an event listener to the file input to trigger the preview
-                                    document.getElementById('cv').addEventListener('change', previewPDF);
-                                </script>
-
-
-                            </form>
 
 
                             <div class="form-group row">	
@@ -306,7 +198,7 @@
                 <div class="row" >
                     <div class="col-sm-3" style="margin-top: 20px;">
                         <a href="index.jsp">
-                            <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
+                            <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
                             <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 

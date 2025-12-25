@@ -7,9 +7,9 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>About Us</title>
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/aboutUs.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css?v=<%= System.currentTimeMillis() %>">
+        <link href="css/bootstrap.min.css?v=<%= System.currentTimeMillis() %>" rel="stylesheet">
+        <link href="css/aboutUs.css?v=<%= System.currentTimeMillis() %>" rel="stylesheet">
         <script src="https://kit.fontawesome.com/0008de2df6.js" crossorigin="anonymous"></script>
     </head>
     <body>
@@ -19,8 +19,8 @@
                 <div class="container-fluid">
 
                    <a class="navbar-brand" href="index.jsp">
-                        <!-- <img src="images/trendhireLogo.png" class="w-100 main-logo" alt="Logo" title="Logo">-->
-                        <img src="images/trendhireLogo.jpg" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
+                        <!-- <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="w-100 main-logo" alt="Logo" title="Logo">-->
+                        <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" class="main-logo" alt="Logo" title="Logo" style="max-width: 150px; max-height: 100px;">
 
                     </a>
 
@@ -96,7 +96,7 @@
                     <div class="col-sm-7 d-none d-md-block">
                         <div class="row">
                             <div class="d-flex w-100">
-                                <img class="w-100" src="images/trendhireLogo.jpg" alt="Banner" />
+                                <img class="w-100" src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner" />
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
                 <div class="row">
                     <div class="col-sm-5 me-3 m-auto">
                         <div class="overImg">
-                            <div class="img-card"><img class="w-100" src="images/AboutUs/abouUs.jpg" alt="Banner"></div>
+                            <div class="img-card"><img class="w-100" src="images/AboutUs/abouUs.jpg?v=<%= System.currentTimeMillis() %>" alt="Banner"></div>
                         </div>
                     </div>
                     <div class="col-sm-6 pt-md-5 mx-auto pt-sm-0">
@@ -174,9 +174,9 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/Migaran.jpg" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/grum.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
-                                <h5 class="mb-0" >Migara Thiyunuwan</h5>
+                                <h5 class="mb-0" >Gurmesa Ayele</h5>
                                 <p class="small text-muted">Full Stack Developer</p>
 
                             </div>
@@ -187,9 +187,9 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/malkinn.jpg" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/sam.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
-                                <h5 class="mb-0">Malki Madubhashini</h5>
+                                <h5 class="mb-0">Samuel Tefera</h5>
                                 <p class="small text-muted">Full Stack Developer</p>
 
                             </div>
@@ -200,9 +200,9 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/Sakunin.jpg" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/kira.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
-                                <h5 class="mb-0">Sakuni Nikeshala</h5>
+                                <h5 class="mb-0">Kirubel Wondewossen</h5>
                                 <p class="small text-muted">Full Stack Developer</p>
 
                             </div>
@@ -213,9 +213,9 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/Thimiran.jpg" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/roba.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
-                                <h5 class="mb-0">Thimira Kalansooriya</h5>
+                                <h5 class="mb-0">Robsen Gelana</h5>
                                 <p class="small text-muted">Full Stack Developer</p>
 
                             </div>
@@ -226,9 +226,9 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/shamini.jpg" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/akal.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
-                                <h5 class="mb-0">Shamini Sivarasa</h5>
+                                <h5 class="mb-0">Samuel Birhanu</h5>
                                 <p class="small text-muted">Full Stack Developer</p>
 
                             </div>
@@ -245,7 +245,7 @@
                 <div class="row" >
                     <div class="col-sm-3" style="margin-top: 20px;">
                         <a href="index.jsp">
-                            <img src="images/trendhireLogo.png" alt="Logo" title="Logo">
+                            <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
                             <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
@@ -274,11 +274,11 @@
                             </div>
                             <div class="d-flex media">
                                 <i class="fa-regular fa-envelope"></i>
-                                <div class="media-body"><p>info@trendhire.com</p></div>
+                                <div class="media-body"><p>gurmesaayele49@gmail.com</p></div>
                             </div>
                             <div class="d-flex media">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <div class="media-body"><p class="f_rubik">+9455-1234567</p></div>
+                                <div class="media-body"><p class="f_rubik">+25190916970942</p></div>
                             </div>
                         </div>
                     </div>
@@ -288,3 +288,4 @@
         </footer>
     </body>
 </html>
+
