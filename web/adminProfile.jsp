@@ -88,21 +88,17 @@
 
                         <div class="proLinks">
                             <div class="d-grid mb-4">
-                                <a href="adminUser.jsp" class="btn btn-outline-danger">
+                                <a href="adminUser.jsp" class="btn btn-outline-danger mb-2">
                                     <i class="fa-solid fa-address-card" aria-hidden="true"></i> User Details
-
                                 </a>
-                            </div>
-                            <div class="d-grid mb-4">
-                                <a href="adminCompany.jsp" class="btn btn-outline-danger">
+                                <a href="adminCompany.jsp" class="btn btn-outline-danger mb-2">
                                     <i class="fa-solid fa-address-card" aria-hidden="true"></i> Company Details
-
                                 </a>
-                            </div>
-                            <div class="d-grid mb-4">
-                                <a href="adminPost.jsp" class="btn btn-outline-danger">
+                                <a href="adminPost.jsp" class="btn btn-outline-danger mb-2">
                                     <i class="fa-solid fa-address-card" aria-hidden="true"></i> Vacancy Details
-
+                                </a>
+                                <a href="adminRecruitmentReports.jsp" class="btn btn-warning">
+                                    <i class="fa fa-chart-bar" aria-hidden="true"></i> Recruitment Reports
                                 </a>
                             </div>
                          
@@ -168,7 +164,7 @@
                             <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
-                            <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
+                            <p class="w-90">"Welcome to GrumHire, your gateway to career opportunities. Explore, apply, and 
                                 connect with your dream jobs effortlessly. Join us today and shape your future!" 
                             </p>
                         </div>

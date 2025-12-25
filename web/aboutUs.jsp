@@ -117,9 +117,9 @@
                     </div>
                     <div class="col-sm-6 pt-md-5 mx-auto pt-sm-0">
                         <h1>Company <span class="text-red">Overview</span></h1>
-                        <p class="pt-3">GrumJobs is a cutting-edge and user-friendly job application portal that aims to revolutionize the way job seekers and employers connect. Built with the latest technologies and a focus on enhancing the job application process, Tredhire provides an intuitive and efficient platform for job seekers to find their dream positions and for employers to discover top talent.</p>
+                        <p class="pt-3">GrumHire is a cutting-edge and user-friendly job application portal that aims to revolutionize the way job seekers and employers connect. Built with the latest technologies and a focus on enhancing the job application process, Tredhire provides an intuitive and efficient platform for job seekers to find their dream positions and for employers to discover top talent.</p>
                         <div class="p">
-                            GrumJobs is a modern and dynamic job application portal that brings job seekers and employers together through a user-friendly and efficient platform. With its innovative features and commitment to user satisfaction, Tredhire sets a new standard for the online job search and recruitment industry, creating a seamless experience for all users involved in the job application process.
+                            GrumHire is a modern and dynamic job application portal that brings job seekers and employers together through a user-friendly and efficient platform. With its innovative features and commitment to user satisfaction, Tredhire sets a new standard for the online job search and recruitment industry, creating a seamless experience for all users involved in the job application process.
                         </div>
                     </div>
                 </div>
@@ -174,10 +174,10 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/grum.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/grum.jpg?v=<%= System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
                                 <h5 class="mb-0" >Gurmesa Ayele</h5>
-                                <p class="small text-muted">Full Stack Developer</p>
+                                <p class="small text-muted">Full Stack Developer and Fluter Developer</p>
 
                             </div>
                         </div>
@@ -187,10 +187,10 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/sam.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/sam.jpg?v=<%= System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
                                 <h5 class="mb-0">Samuel Tefera</h5>
-                                <p class="small text-muted">Full Stack Developer</p>
+                                <p class="small text-muted">Backend Engineer and Python Developer</p>
 
                             </div>
                         </div>
@@ -200,10 +200,10 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/kira.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/kira.jpg?v=<%= System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
                                 <h5 class="mb-0">Kirubel Wondewossen</h5>
-                                <p class="small text-muted">Full Stack Developer</p>
+                                <p class="small text-muted">Full Stack Developer and UX/UI Designer</p>
 
                             </div>
                         </div>
@@ -213,10 +213,10 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/roba.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/roba.jpg?v=<%= System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
                                 <h5 class="mb-0">Robsen Gelana</h5>
-                                <p class="small text-muted">Full Stack Developer</p>
+                                <p class="small text-muted">Data analytics and Business Intelligence Specialist</p>
 
                             </div>
                         </div>
@@ -226,7 +226,7 @@
                 <div class="col">
                     <!-- Card-->
                     <div class="card shadow-sm border-0 rounded">
-                        <div class="card-body p-0"><img src="images/AboutUs/akal.jpg System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
+                        <div class="card-body p-0"><img src="images/AboutUs/akal.jpg?v=<%= System.currentTimeMillis() %>" alt="" class="w-100 card-img-top">
                             <div class="p-4">
                                 <h5 class="mb-0">Samuel Birhanu</h5>
                                 <p class="small text-muted">Full Stack Developer</p>
@@ -248,7 +248,7 @@
                             <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
-                            <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
+                            <p class="w-90">"Welcome to GrumHire, your gateway to career opportunities. Explore, apply, and 
                                 connect with your dream jobs effortlessly. Join us today and shape your future!" 
                             </p>
                         </div>
@@ -270,7 +270,13 @@
                         <div class="footer_inner">
                             <div class="d-flex media">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <div class="media-body"><p> <span class="f_rubik">43,</span> Passara Road, Badulla <br> Sri Lanka <span class="f_rubik">90000</span> </p></div>
+                                <div class="media-body">
+  <p>
+    <span class="f_rubik">43,</span> Piassa Area, Addis Ababa <br>
+    Ethiopia <span class="f_rubik">P.O. Box 1000</span>
+  </p>
+</div>
+
                             </div>
                             <div class="d-flex media">
                                 <i class="fa-regular fa-envelope"></i>

@@ -1,4 +1,6 @@
 <%@page import="com.classes.seeker"%>
+<%@page import="com.classes.DBConnector"%>
+<%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="com.classes.company" %>
 <%@ page import="javax.servlet.http.HttpSession" %>
@@ -156,10 +158,102 @@
                         </div><!-- /. row -->
 
                         <div class="row">
-                            <div class="col-sm-12" style="margin-bottom: 50px">
+                            <div class="col-sm-12" style="margin-bottom: 30px">
                                 <h4>Job Description:-</h4>
                                 <div class="offset-1">
                                     <p><% out.print(description); %></p>
+                                </div>
+                            </div>
+                        </div><!-- /. row -->
+
+                        <!-- Selection Criteria Section -->
+                        <div class="row">
+                            <div class="col-sm-12" style="margin-bottom: 50px">
+                                <h4><i class="fas fa-filter me-2"></i>Selection Criteria:-</h4>
+                                <div class="offset-1">
+                                    <%
+                                        // Get selection criteria for this vacancy
+                                        Connection criteriaConnection = null;
+                                        try {
+                                            criteriaConnection = DBConnector.getCon();
+                                            PreparedStatement criteriaStmt = criteriaConnection.prepareStatement(
+                                                "SELECT * FROM selection_criteria WHERE vacancyID = ? ORDER BY priority DESC, weightage DESC");
+                                            criteriaStmt.setString(1, vacancyId);
+                                            ResultSet criteriaRs = criteriaStmt.executeQuery();
+                                            
+                                            boolean hasCriteria = false;
+                                            while (criteriaRs.next()) {
+                                                hasCriteria = true;
+                                                String criteriaType = criteriaRs.getString("criteria_type");
+                                                String criteriaDesc = criteriaRs.getString("criteria_description");
+                                                String priority = criteriaRs.getString("priority");
+                                                int weightage = criteriaRs.getInt("weightage");
+                                                
+                                                String priorityClass = "";
+                                                String priorityIcon = "";
+                                                switch (priority) {
+                                                    case "High":
+                                                        priorityClass = "text-danger";
+                                                        priorityIcon = "fas fa-exclamation-circle";
+                                                        break;
+                                                    case "Medium":
+                                                        priorityClass = "text-warning";
+                                                        priorityIcon = "fas fa-star";
+                                                        break;
+                                                    case "Low":
+                                                        priorityClass = "text-info";
+                                                        priorityIcon = "fas fa-info-circle";
+                                                        break;
+                                                }
+                                    %>
+                                    <div class="criteria-item mb-3 p-3 border rounded">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-2">
+                                                <span class="badge bg-secondary"><%= criteriaType %></span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <strong><%= criteriaDesc %></strong>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="<%= priorityClass %>">
+                                                    <i class="<%= priorityIcon %>"></i> <%= priority %>
+                                                </span>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <span class="badge bg-primary"><%= weightage %>%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%
+                                            }
+                                            
+                                            if (!hasCriteria) {
+                                    %>
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle"></i> No specific selection criteria defined for this position. 
+                                        General qualifications and requirements are mentioned in the job description above.
+                                    </div>
+                                    <%
+                                            }
+                                            
+                                            criteriaRs.close();
+                                            criteriaStmt.close();
+                                        } catch (Exception e) {
+                                            out.println("<div class='alert alert-warning'>Unable to load selection criteria at this time.</div>");
+                                        } finally {
+                                            if (criteriaConnection != null) criteriaConnection.close();
+                                        }
+                                    %>
+                                    
+                                    <div class="mt-3">
+                                        <small class="text-muted">
+                                            <i class="fas fa-lightbulb"></i> 
+                                            <strong>Legend:</strong> 
+                                            <span class="text-danger">High Priority</span> - Must have requirements | 
+                                            <span class="text-warning">Medium Priority</span> - Preferred qualifications | 
+                                            <span class="text-info">Low Priority</span> - Nice to have skills
+                                        </small>
+                                    </div>
                                 </div>
                             </div>
                         </div><!-- /. row -->
@@ -222,10 +316,10 @@
                             </a>
 
 
-                            <div class="d-flex justify-content-cente ms-5">
+                            <div class="d-flex justify-content-center ms-5">
                                 <span class="ms-4">
                                     <img id="previewImage" src="" alt="Selected Image"
-                                         style="display: none; object-fit:"
+                                         style="display: none; object-fit: cover;"
                                          class="card-img-top">
                                 </span>
                             </div>
@@ -260,8 +354,10 @@
                             <div class="input-group">
 
 
-                                <a href="seekerLogin.jsp"   <button class="btn btn-danger w-100" type="button"
-                                                                    id="inputGroupFileAddon04">Login as Job Seeker</button>  </a>
+                            <a href="seekerLogin.jsp">
+                                <button class="btn btn-danger w-100" type="button"
+                                        id="inputGroupFileAddon04">Login as Job Seeker</button>
+                            </a>
 
 
                             </div>

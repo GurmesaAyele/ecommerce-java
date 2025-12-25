@@ -100,8 +100,11 @@
                                 <a href="postvacancy.jsp" class="btn btn-success mb-2">
                                     <i class="fa fa-plus" aria-hidden="true"></i> Post New Job
                                 </a>
-                                <a href="manageApplications.jsp" class="btn btn-primary">
+                                <a href="manageApplications.jsp" class="btn btn-primary mb-2">
                                     <i class="fa fa-users" aria-hidden="true"></i> Manage Applications
+                                </a>
+                                <a href="recruitmentReports.jsp" class="btn btn-warning">
+                                    <i class="fa fa-chart-bar" aria-hidden="true"></i> View Reports
                                 </a> 
                             </div>
                             <div class="d-grid mb-4">

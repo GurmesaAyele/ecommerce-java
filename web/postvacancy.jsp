@@ -104,7 +104,7 @@
                     <p class="text-muted mt-2">Choose Quick Post for simple job posting or Advanced Post for detailed features</p>
                 </div>
                 
-                <form action="backend/enhanced_post_job_process.jsp" method="post" id="jobForm">
+                <form action="backend/postVacancyProcess.jsp" method="post" id="jobForm">
                     
                     <!-- Basic Job Information -->
                     <div class="form-section">
@@ -252,6 +252,62 @@
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Selection Criteria Section -->
+                    <div class="form-section advanced-features">
+                        <h4 class="section-title"><i class="fas fa-filter"></i> Selection Criteria</h4>
+                        <p class="text-muted">Define the criteria for evaluating candidates for this position</p>
+                        
+                        <div id="criteriaContainer">
+                            <div class="criteria-item mb-3">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <select name="criteria_type[]" class="form-control">
+                                            <option value="">Select Type</option>
+                                            <option value="Education">Education</option>
+                                            <option value="Experience">Experience</option>
+                                            <option value="Skills">Skills</option>
+                                            <option value="Certification">Certification</option>
+                                            <option value="Language">Language</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" name="criteria_description[]" class="form-control" 
+                                               placeholder="e.g., Bachelor's degree in Computer Science">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <select name="criteria_priority[]" class="form-control">
+                                            <option value="High">High (Must Have)</option>
+                                            <option value="Medium" selected>Medium (Preferred)</option>
+                                            <option value="Low">Low (Nice to Have)</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="number" name="criteria_weightage[]" class="form-control" 
+                                               placeholder="%" min="1" max="100">
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeCriteria(this)">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <button type="button" class="btn btn-outline-primary btn-sm" onclick="addCriteria()">
+                                <i class="fas fa-plus"></i> Add Another Criteria
+                            </button>
+                        </div>
+                        
+                        <div class="alert alert-info">
+                            <small><i class="fas fa-info-circle"></i> 
+                            Selection criteria help standardize candidate evaluation. High priority items are must-haves, 
+                            while medium and low priority items are preferred qualifications.</small>
                         </div>
                     </div>
 
@@ -427,6 +483,54 @@
                 }
             }
         });
+        
+        // Selection Criteria Management
+        function addCriteria() {
+            const container = document.getElementById('criteriaContainer');
+            const criteriaItem = document.createElement('div');
+            criteriaItem.className = 'criteria-item mb-3';
+            criteriaItem.innerHTML = `
+                <div class="row">
+                    <div class="col-md-3">
+                        <select name="criteria_type[]" class="form-control">
+                            <option value="">Select Type</option>
+                            <option value="Education">Education</option>
+                            <option value="Experience">Experience</option>
+                            <option value="Skills">Skills</option>
+                            <option value="Certification">Certification</option>
+                            <option value="Language">Language</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" name="criteria_description[]" class="form-control" 
+                               placeholder="e.g., Bachelor's degree in Computer Science">
+                    </div>
+                    <div class="col-md-2">
+                        <select name="criteria_priority[]" class="form-control">
+                            <option value="High">High (Must Have)</option>
+                            <option value="Medium" selected>Medium (Preferred)</option>
+                            <option value="Low">Low (Nice to Have)</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" name="criteria_weightage[]" class="form-control" 
+                               placeholder="%" min="1" max="100">
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="btn btn-outline-danger btn-sm" onclick="removeCriteria(this)">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </div>
+            `;
+            container.appendChild(criteriaItem);
+        }
+        
+        function removeCriteria(button) {
+            const criteriaItem = button.closest('.criteria-item');
+            criteriaItem.remove();
+        }
         
         // Initialize in advanced mode and ensure proper display
         document.addEventListener('DOMContentLoaded', function() {

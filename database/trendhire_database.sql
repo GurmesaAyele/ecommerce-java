@@ -301,3 +301,125 @@ SHOW TABLES;
 SELECT 'TrendHire database setup completed successfully!' as Status,
        'All basic and enhanced features are now available' as Message,
        'You can now use the enhanced job posting system' as Note;
+
+-- Enhanced Recruitment Management Tables
+-- These tables add comprehensive recruitment features to the existing system
+
+-- Selection criteria table for defining job requirements
+CREATE TABLE IF NOT EXISTS selection_criteria (
+    criteria_id INT AUTO_INCREMENT PRIMARY KEY,
+    vacancyID INT NOT NULL,
+    companyID INT NOT NULL,
+    criteria_type ENUM('Education', 'Experience', 'Skills', 'Certification', 'Language', 'Other') NOT NULL,
+    criteria_description TEXT NOT NULL,
+    priority ENUM('High', 'Medium', 'Low') DEFAULT 'Medium',
+    weightage INT CHECK (weightage BETWEEN 1 AND 100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (vacancyID) REFERENCES vacancy(vacancyID) ON DELETE CASCADE,
+    FOREIGN KEY (companyID) REFERENCES company(companyID) ON DELETE CASCADE
+);
+
+-- Enhanced interview table with comprehensive feedback and scoring
+CREATE TABLE IF NOT EXISTS interview_feedback (
+    feedback_id INT AUTO_INCREMENT PRIMARY KEY,
+    interview_id INT NOT NULL,
+    technical_score INT CHECK (technical_score BETWEEN 1 AND 10),
+    communication_score INT CHECK (communication_score BETWEEN 1 AND 10),
+    problem_solving_score INT CHECK (problem_solving_score BETWEEN 1 AND 10),
+    cultural_fit_score INT CHECK (cultural_fit_score BETWEEN 1 AND 10),
+    experience_score INT CHECK (experience_score BETWEEN 1 AND 10),
+    overall_score INT CHECK (overall_score BETWEEN 1 AND 10),
+    average_score DECIMAL(3,2),
+    
+    -- Detailed feedback fields
+    strengths TEXT,
+    weaknesses TEXT,
+    additional_comments TEXT,
+    recommendation ENUM('Strongly Recommend', 'Recommend', 'Maybe', 'Do Not Recommend'),
+    
+    feedback_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (interview_id) REFERENCES interview(interviewID) ON DELETE CASCADE
+);
+
+-- Notifications table for candidate status updates
+CREATE TABLE IF NOT EXISTS notifications (
+    notification_id INT AUTO_INCREMENT PRIMARY KEY,
+    recipient_type ENUM('seeker', 'company', 'admin') NOT NULL,
+    recipient_id INT NOT NULL,
+    notification_type VARCHAR(50) NOT NULL,
+    title VARCHAR(200) NOT NULL,
+    message TEXT NOT NULL,
+    vacancy_id INT,
+    application_id INT,
+    company_id INT,
+    is_read BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    read_at TIMESTAMP NULL,
+    
+    FOREIGN KEY (vacancy_id) REFERENCES vacancy(vacancyID) ON DELETE SET NULL,
+    FOREIGN KEY (application_id) REFERENCES application(applicationID) ON DELETE SET NULL,
+    FOREIGN KEY (company_id) REFERENCES company(companyID) ON DELETE SET NULL,
+    
+    INDEX idx_recipient (recipient_type, recipient_id),
+    INDEX idx_created_at (created_at)
+);
+
+-- Shortlisting records table for structured candidate evaluation
+CREATE TABLE IF NOT EXISTS shortlist (
+    shortlist_id INT AUTO_INCREMENT PRIMARY KEY,
+    applicationID INT NOT NULL,
+    vacancyID INT NOT NULL,
+    seekerID INT NOT NULL,
+    companyID INT NOT NULL,
+    shortlisted_by VARCHAR(100),
+    shortlist_reason TEXT,
+    shortlist_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    criteria_met TEXT,
+    score INT CHECK (score BETWEEN 1 AND 100),
+    
+    FOREIGN KEY (applicationID) REFERENCES application(applicationID) ON DELETE CASCADE,
+    FOREIGN KEY (vacancyID) REFERENCES vacancy(vacancyID) ON DELETE CASCADE,
+    FOREIGN KEY (seekerID) REFERENCES seeker(seekerID) ON DELETE CASCADE,
+    FOREIGN KEY (companyID) REFERENCES company(companyID) ON DELETE CASCADE
+);
+
+-- Recruitment performance tracking table
+CREATE TABLE IF NOT EXISTS recruitment_metrics (
+    metric_id INT AUTO_INCREMENT PRIMARY KEY,
+    companyID INT NOT NULL,
+    vacancyID INT,
+    metric_type ENUM('application_count', 'shortlist_rate', 'interview_rate', 'hire_rate', 'time_to_hire') NOT NULL,
+    metric_value DECIMAL(10,2),
+    measurement_date DATE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (companyID) REFERENCES company(companyID) ON DELETE CASCADE,
+    FOREIGN KEY (vacancyID) REFERENCES vacancy(vacancyID) ON DELETE SET NULL
+);
+
+-- Create indexes for better performance on new tables
+CREATE INDEX IF NOT EXISTS idx_selection_criteria_vacancy ON selection_criteria(vacancyID);
+CREATE INDEX IF NOT EXISTS idx_selection_criteria_company ON selection_criteria(companyID);
+CREATE INDEX IF NOT EXISTS idx_interview_feedback_interview ON interview_feedback(interview_id);
+CREATE INDEX IF NOT EXISTS idx_notifications_recipient ON notifications(recipient_type, recipient_id);
+CREATE INDEX IF NOT EXISTS idx_shortlist_application ON shortlist(applicationID);
+CREATE INDEX IF NOT EXISTS idx_recruitment_metrics_company ON recruitment_metrics(companyID);
+
+-- Sample notifications for testing
+INSERT IGNORE INTO notifications (recipient_type, recipient_id, notification_type, title, message, vacancy_id, application_id, company_id) VALUES
+('seeker', 1, 'Application Status Change', 'Application Status Updated', 'Your application for Senior Software Engineer has been updated to Under Review.', 1, 1, 1),
+('seeker', 2, 'Interview Scheduled', 'Interview Scheduled', 'An interview has been scheduled for your application to DevOps Engineer position.', 3, 3, 1),
+('seeker', 3, 'Application Accepted', 'Congratulations!', 'Your application for Registered Nurse position has been accepted.', 6, 6, 3);
+
+-- Sample selection criteria for testing
+INSERT IGNORE INTO selection_criteria (vacancyID, companyID, criteria_type, criteria_description, priority, weightage) VALUES
+(1, 1, 'Education', 'Bachelor degree in Computer Science or related field', 'High', 25),
+(1, 1, 'Experience', 'Minimum 5 years of software development experience', 'High', 30),
+(1, 1, 'Skills', 'Proficiency in Java, Python, or C++', 'High', 25),
+(1, 1, 'Skills', 'Experience with cloud platforms (AWS, Azure, GCP)', 'Medium', 20),
+(2, 1, 'Education', 'Bachelor degree in Computer Science', 'High', 20),
+(2, 1, 'Experience', 'Minimum 3 years of frontend development experience', 'High', 30),
+(2, 1, 'Skills', 'Expert knowledge of React, JavaScript, HTML, CSS', 'High', 30),
+(2, 1, 'Skills', 'Experience with modern frontend tools and frameworks', 'Medium', 20);

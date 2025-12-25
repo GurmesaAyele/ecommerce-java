@@ -132,7 +132,7 @@
                             <img src="images/trendhireLogo.jpg?v=<%= System.currentTimeMillis() %>" alt="Logo" title="Logo">
                         </a>
                         <div class="footer_inner">
-                            <p class="w-90">"Welcome to TrendHire, your gateway to career opportunities. Explore, apply, and 
+                            <p class="w-90">"Welcome to GrumHire, your gateway to career opportunities. Explore, apply, and 
                                 connect with your dream jobs effortlessly. Join us today and shape your future!" 
                             </p>
                         </div>
@@ -154,15 +154,21 @@
                         <div class="footer_inner">
                             <div class="d-flex media">
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                <div class="media-body"><p> <span class="f_rubik">43,</span> Passara Road, Badulla <br> Sri Lanka <span class="f_rubik">90000</span> </p></div>
+                                <div class="media-body">
+  <p>
+    <span class="f_rubik">43,</span> Piassa Area, Addis Ababa <br>
+    Ethiopia <span class="f_rubik">P.O. Box 1000</span>
+  </p>
+</div>
+
                             </div>
                             <div class="d-flex media">
                                 <i class="fa-regular fa-envelope"></i>
-                                <div class="media-body"><p>info@trendhire.com</p></div>
+                                <div class="media-body"><p>gurmesaayele49@gmail.com</p></div>
                             </div>
                             <div class="d-flex media">
                                 <i class="fa fa-phone" aria-hidden="true"></i>
-                                <div class="media-body"><p class="f_rubik">+9455-1234567</p></div>
+                                <div class="media-body"><p class="f_rubik">+251916970942</p></div>
                             </div>
                         </div>
                     </div>
